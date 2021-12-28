@@ -5,6 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:hello": "vue-cli-service build --target lib --dest dist/components/HelloWorld --name index src/components/HelloWorld.vue",
+    "build:home": "vue-cli-service build --target lib --dest dist/views/Home --name index src/views/Home.vue",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -39,7 +41,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,vue}": [
+    "src/.{js,jsx,vue}": [
       "vue-cli-service lint",
       "git add"
     ]
