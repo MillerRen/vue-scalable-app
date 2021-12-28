@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "build:hello": "vue-cli-service build --target lib --dest dist/components/HelloWorld --name index src/components/HelloWorld.vue",
     "build:home": "vue-cli-service build --target lib --dest dist/views/Home --name index src/views/Home.vue",
+    "build:about": "vue-cli-service build --target lib --dest dist/views/About --name index src/views/About.vue",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
