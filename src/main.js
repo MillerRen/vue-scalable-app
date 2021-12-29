@@ -1,16 +1,16 @@
 import Vue from 'vue'
-import App from './App.vue'
 import './registerServiceWorker'
-import router from './router'
-import store from './store'
-import bootstrap from './bootstrap'
+
+import App from './app'
+import { CONFIG_FILE } from './constants/env'
+import dynamicImport from './utils/dynamic-import'
 
 Vue.config.productionTip = false
 
-bootstrap().then(() => {
-  new Vue({
-    router,
-    store,
-    render: h => h(App)
-  }).$mount('#app')
+const app = new App({
+  el: '#app',
+  configFile: CONFIG_FILE,
+  loadScript: dynamicImport
 })
+
+app.start().then(() => console.log('app started'))
