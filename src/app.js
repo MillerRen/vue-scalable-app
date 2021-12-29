@@ -8,6 +8,9 @@ export default class App {
   }
 
   loadConfig () {
+    if (localStorage.getItem('config')) {
+      return Promise.resolve(JSON.parse(localStorage.getItem('config')))
+    }
     return this.options.loadScript(this.options.configFile)
   }
 
