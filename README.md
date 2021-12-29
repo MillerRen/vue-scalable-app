@@ -1,4 +1,17 @@
 # vue-scaleable-app
+A scaffolding for building huge Single Page Application but with short and constant building time! All components and routes dynamic import on-demand!.
+
+## How it works
+1. A script loader (requirejs).
+1. A config file record the url of plugins and components and routes.
+1. Declare A component in vue template and async import it with requirejs on render.
+1. Build app and components(UMD standard) sparately with vue cli.
+
+## Usage
+
+## FAQ
+1. Why not use webpack import() function or require.ensure()?
+  Because webpack static analysis when using import() or require. It will spend more time.
 
 ## Project setup
 ```
