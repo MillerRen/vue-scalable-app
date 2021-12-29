@@ -5,10 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:app": "vue-cli-service build --target lib --dest dist/views/App --name index src/views/App.vue",
-    "build:hello": "vue-cli-service build --target lib --dest dist/components/HelloWorld --name index src/components/HelloWorld.vue",
-    "build:home": "vue-cli-service build --target lib --dest dist/views/Home --name index src/views/Home.vue",
-    "build:about": "vue-cli-service build --target lib --dest dist/views/About --name index src/views/About.vue",
+    "build:component": "vue-cli-service build --target lib --formats umd-min --name ",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },

@@ -1,7 +1,9 @@
 const path = require('path')
+const env = process.env
 
 module.exports = {
-  productionSourceMap: false,
+  indexPath: `index-${env.npm_package_gitHead}.html`,
+  productionSourceMap: env.NODE_ENV !== 'production',
   css: {
     extract: false,
     sourceMap: false
@@ -12,6 +14,8 @@ module.exports = {
   chainWebpack: config => {
     config.plugins.delete('prefetch')
     config.plugins.delete('preload')
+    config.output.libraryTarget('umd')
+    config.output.libraryExport('')
     config.module
       .rule('images')
       .use('url-loader')

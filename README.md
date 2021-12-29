@@ -7,11 +7,6 @@ A scaffolding for building huge Single Page Application but with short and const
 1. Declare A component in vue template and async import it with requirejs on render.
 1. Build app and components(UMD standard) sparately with vue cli.
 
-## Usage
-
-## FAQ
-1. Why not use webpack import() function or require.ensure()?
-  Because webpack static analysis when using import() or require. It will spend more time.
 
 ## Project setup
 ```
@@ -38,5 +33,23 @@ npm run test:unit
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### build component
+
+```
+npm run build:component HelloWorld src/components/HelloWorld.vue
+```
+
+### build component with hash
+
+```
+npm run build:component HelloWorld.[hash] src/components/HelloWorld.vue
+```
+
+### serve component indpendent
+```
+npm run serve src/components/HelloWrold.vue
+```
+
+## FAQ
+1. Why not use webpack import() function or require.ensure()?
+  Because webpack static analysis when using import() or require. It will spend more time.

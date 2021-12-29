@@ -13,4 +13,4 @@ const app = new App({
   loadScript: dynamicImport
 })
 
-app.start().then(() => console.log('app started'))
+app.start()
