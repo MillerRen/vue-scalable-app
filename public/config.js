@@ -13,15 +13,16 @@ define(function (require, module, exports) {
     routes: [
       {
         path: '/',
-        redirect: '/home'
-      },
-      {
-        path: '/home',
-        name: 'Home',
-        url: '/views/Home/index.umd.min.js',
+        name: 'App',
+        url: '/views/App/index.umd.min.js',
         children: [
           {
-            path: 'about',
+            path: '',
+            name: 'Home',
+            url: '/views/Home/index.umd.min.js'
+          },
+          {
+            path: 'About',
             name: 'About',
             url: '/views/About/index.umd.min.js'
           }
@@ -30,7 +31,7 @@ define(function (require, module, exports) {
       {
         path: '*',
         component: {
-          template:'<div>404</div>'
+          template: '<div>404</div>'
         }
       }
     ]

@@ -26,7 +26,7 @@ function initRoutes (routes = [], children = false) {
     route.url && initComponents([route])
     route.component = route.component || Vue.component(route.name)
     route.children && initRoutes(route.children, true)
-    !children && router.addRoute(route)
+    !children && (delete route.name) && router.addRoute(route)
   })
 }
 
