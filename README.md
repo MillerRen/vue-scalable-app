@@ -36,13 +36,7 @@ npm run lint
 ### build component
 
 ```
-npm run build:component HelloWorld src/components/HelloWorld.vue
-```
-
-### build component with hash
-
-```
-npm run build:component HelloWorld.[hash] src/components/HelloWorld.vue
+npm run package src/components/HelloWorld.vue
 ```
 
 ### serve component indpendent
