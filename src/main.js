@@ -1,3 +1,4 @@
+import 'nprogress/nprogress.css'
 import Vue from 'vue'
 import './registerServiceWorker'
 
