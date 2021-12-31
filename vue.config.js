@@ -11,6 +11,11 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist')
   },
+  pwa: {
+    workboxOptions: {
+      importWorkboxFrom: 'local'
+    }
+  },
   chainWebpack: config => {
     config.plugins.delete('prefetch')
     config.plugins.delete('preload')
