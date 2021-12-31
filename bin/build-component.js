@@ -25,7 +25,7 @@ const entry = args._[1]
 args.target = 'lib'
 args.formats = 'umd-min'
 
-args.name = entry.replace(/(.*)\.vue$/, '$1')
+args.name = entry.replace(/(.*\/|.*\\)*(.*\/|.*\\)(.*)\.vue$/, '$2$3')
 
 service.run(command, args, rawArgv).catch(err => {
   console.error(err)
