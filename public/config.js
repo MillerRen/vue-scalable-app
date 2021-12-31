@@ -7,19 +7,19 @@ define(function (require, module, exports) {
     components: [
       {
         name: 'HelloWorld',
-        url: '/components/HelloWorld/index.umd.min.js'
+        url: '/components/HelloWorld.39242a3.umd.min.js'
       }
     ],
     routes: [
       {
         path: '/',
         name: 'App',
-        url: '/views/App/index.umd.min.js',
+        url: '/views/App.24e789a.umd.min.js',
         children: [
           {
             path: '',
             name: 'Home',
-            url: '/views/Home/index.umd.min.js'
+            url: '/views/Home.bb9dc5c.umd.min.js'
           },
           {
             path: 'About',

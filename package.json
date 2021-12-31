@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "package": "node bin/build-component.js build ",
+    "package": "node bin/build-component.js build --no-clean --target lib --formats umd-min ",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
