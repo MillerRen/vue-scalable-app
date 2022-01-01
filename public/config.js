@@ -25,14 +25,14 @@ define(function (require, module, exports) {
             path: 'About',
             name: 'About',
             url: '/views/About.00a60eb.umd.min.js'
+          },
+          {
+            path: '404',
+            alias: '*',
+            name: 'Notfound',
+            url: '/views/404.ae82108.umd.min.js'
           }
         ]
-      },
-      {
-        path: '*',
-        component: {
-          template: '<div>404</div>'
-        }
       }
     ]
   }

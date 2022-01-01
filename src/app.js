@@ -36,7 +36,7 @@ export default class App {
   initRoutes (routes = [], children = false) {
     return routes.map(route => {
       route.url && this.initComponents([route])
-      route.component = route.component || Vue.component(route.name)
+      route.name && !route.component && (route.component = Vue.component(route.name))
       route.children && this.initRoutes(route.children, true)
       !children && delete route.name && router.addRoute(route)
     })
@@ -53,6 +53,14 @@ export default class App {
     }).$mount(this.options.el)
   }
 
+  checkLogin () {
+    if (!store.getters.token) {
+      router.push({
+        path: '/login'
+      })
+    }
+  }
+
   bootstrap () {
     return this.loadConfig().then(config => {
       return this.initPlugins(config.plugins || []).then(() => {
@@ -61,6 +69,7 @@ export default class App {
         this.createApp({
           theme: config.theme
         })
+        this.checkLogin()
       })
     })
   }
