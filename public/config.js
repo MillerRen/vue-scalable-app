@@ -24,7 +24,15 @@ define(function (require, module, exports) {
           {
             path: 'About',
             name: 'About',
-            url: '/views/About.00a60eb.umd.min.js'
+            url: '/views/About.00a60eb.umd.min.js',
+            meta: {
+              requiredAuth: true
+            }
+          },
+          {
+            path: 'login',
+            name: 'Login',
+            url: '/views/Login.6a3944c.umd.min.js'
           },
           {
             path: '404',

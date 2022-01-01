@@ -11,6 +11,16 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   nprogress.start()
+  if (to.matched.some(record => record.meta.requiredAuth)) {
+    if (!localStorage.getItem('token')) {
+      return next({
+        path: '/login',
+        query: {
+          redirect: to.fullPath
+        }
+      })
+    }
+  }
   next()
 })
 

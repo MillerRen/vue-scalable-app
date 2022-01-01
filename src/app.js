@@ -53,14 +53,6 @@ export default class App {
     }).$mount(this.options.el)
   }
 
-  checkLogin () {
-    if (!store.getters.token) {
-      router.push({
-        path: '/login'
-      })
-    }
-  }
-
   bootstrap () {
     return this.loadConfig().then(config => {
       return this.initPlugins(config.plugins || []).then(() => {
@@ -69,7 +61,6 @@ export default class App {
         this.createApp({
           theme: config.theme
         })
-        this.checkLogin()
       })
     })
   }
