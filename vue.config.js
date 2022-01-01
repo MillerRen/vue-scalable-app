@@ -1,4 +1,5 @@
 const path = require('path')
+const mocks = require('./mocks')
 const env = process.env
 
 module.exports = {
@@ -9,7 +10,10 @@ module.exports = {
     sourceMap: false
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist')
+    contentBase: path.join(__dirname, 'dist'),
+    setup (app) {
+      mocks(app)
+    }
   },
   pwa: {
     workboxOptions: {
