@@ -19,7 +19,7 @@ export default class App {
     return Promise.all(
       plugins.map(plugin => {
         return this.options.loadScript(plugin.url).then(plugin => {
-          Vue.use(plugin)
+          Vue.use(plugin.default || plugin)
         })
       })
     )

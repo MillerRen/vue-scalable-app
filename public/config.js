@@ -3,7 +3,12 @@
 define(function (require, module, exports) {
   return {
     theme: 'default',
-    plugins: [],
+    plugins: [
+      {
+        name: 'dialog',
+        url: '/plugins/dialog.cc4c701.umd.min.js'
+      }
+    ],
     components: [
       {
         name: 'HelloWorld',
@@ -19,12 +24,12 @@ define(function (require, module, exports) {
           {
             path: '',
             name: 'Home',
-            url: '/views/Home.bb9dc5c.umd.min.js'
+            url: '/views/Home.a71720f.umd.min.js'
           },
           {
             path: 'About',
             name: 'About',
-            url: '/views/About.00a60eb.umd.min.js',
+            url: '/views/About.7f26485.umd.min.js',
             meta: {
               requiredAuth: true
             }
