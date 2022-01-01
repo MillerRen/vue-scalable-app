@@ -8,6 +8,7 @@ export default class App {
   }
 
   loadConfig () {
+    // 本地配置，可以用于直接在线调试分包
     if (localStorage.getItem('config')) {
       return Promise.resolve(JSON.parse(localStorage.getItem('config')))
     }
