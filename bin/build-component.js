@@ -1,3 +1,6 @@
+// 单独构建分包，部分代码来自@vue/cli-service
+// 由于@vue/cli-service 指定--name 参数时无法自动替换[name]占位符
+// 如果它能够支持了，可以不用此文件，直接使用--name参数[name]即可
 const Service = require('@vue/cli-service/lib/Service')
 const service = new Service(process.env.VUE_CLI_CONTEXT || process.cwd())
 
