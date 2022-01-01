@@ -24,7 +24,7 @@ define(function (require, module, exports) {
           {
             path: '',
             name: 'Home',
-            url: '/views/Home.a71720f.umd.min.js'
+            url: '/views/Home.068b83a.umd.min.js'
           },
           {
             path: 'About',
