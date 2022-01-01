@@ -1,49 +1,19 @@
 # vue-scaleable-app
-A scaffolding for building huge Single Page Application but with short and constant building time! All components and routes dynamic import on-demand!.
+短时间构建大型单页应用。所有组件按需加载,并且能够单独构建。
 
-## How it works
-1. A script loader (requirejs).
-1. A config file record the url of plugins and components and routes.
-1. Declare A component in vue template and async import it with requirejs on render.
-1. Build app and components(UMD standard) sparately with vue cli.
+## 它如何工作？
+1. 需要一个脚本加载器，用于动态加载js文件。使用requirejs实现（动态化）
+1. 需要一个配置文件，记录插件、组件、路由信息和对应js的url（配置化）
+1. 在Vue模板中声明一个组件，并在渲染时异步加载它。（按需加载）
+1. 应用和分包分离(插件，组件，路由)。（模块化）
+1. 独立构建不会随着应用规模增长而增加构建时间。（常数构建时间！）
+1. 更多细节请查看技术文档。
 
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### build component
-
-```
-npm run package src/components/HelloWorld.vue
-```
-
-### serve component indpendent
-```
-npm run serve src/components/HelloWrold.vue
-```
-
-## FAQ
-1. Why not use webpack import() function or require.ensure()?
-  Because webpack static analysis when using import() or require. It will spend more time.
+## 常见问题
+1. 为什么不用webpack的import()函数或require.ensure()函数来动态加载？  
+因为使用这些函数会经过webpack的静态代码分析，构建时仍然是全量构建的，应用规模越大，构建时间越长
+1. 为什么使用requirejs，直接加载js文件不行吗？  
+因为js文件加载后还需要插入应用上下文中去执行的，直接加载js文件则需要设计一个自己的模块管理系统。
+requirjs提供了比较成熟的AMD规范，可以很方便地使用，只需要把分包构建成UMD或AMD规范导出的js就可以了，
+并且webpack可以很平滑地使用AMD或UMD包。
+  
