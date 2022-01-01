@@ -53,6 +53,22 @@ export default class App {
     }).$mount(this.options.el)
   }
 
+  checkLogin () {
+    router.beforeEach((to, from, next) => {
+      if (to.matched.some(record => record.meta.requiredAuth)) {
+        if (!store.state.token) {
+          return next({
+            path: '/login',
+            query: {
+              redirect: to.fullPath
+            }
+          })
+        }
+      }
+      next()
+    })
+  }
+
   bootstrap () {
     return this.loadConfig().then(config => {
       return this.initPlugins(config.plugins || []).then(() => {
@@ -61,6 +77,7 @@ export default class App {
         this.createApp({
           theme: config.theme
         })
+        this.checkLogin()
       })
     })
   }
