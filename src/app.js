@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import router from './router'
 import store from './store'
+import request from './api/request'
 
 export default class App {
   constructor (options) {
@@ -12,7 +13,12 @@ export default class App {
     if (localStorage.getItem('config')) {
       return Promise.resolve(JSON.parse(localStorage.getItem('config')))
     }
-    return this.options.loadScript(this.options.configFile)
+    return request({
+      url: '/config'
+    }).then(res => {
+      console.log(res)
+      return res
+    })
   }
 
   initPlugins (plugins = []) {
@@ -36,7 +42,9 @@ export default class App {
   initRoutes (routes = [], children = false) {
     return routes.map(route => {
       route.url && this.initComponents([route])
-      route.name && !route.component && (route.component = Vue.component(route.name))
+      route.name &&
+        !route.component &&
+        (route.component = Vue.component(route.name))
       route.children && this.initRoutes(route.children, true)
       !children && delete route.name && router.addRoute(route)
     })
