@@ -2,6 +2,7 @@ import Vue from 'vue'
 import router from './router'
 import store from './store'
 import request from './api/request'
+import { CONFIG_FILE } from './constants/env'
 
 export default class App {
   constructor (options) {
@@ -14,10 +15,7 @@ export default class App {
       return Promise.resolve(JSON.parse(localStorage.getItem('config')))
     }
     return request({
-      url: '/config'
-    }).then(res => {
-      console.log(res)
-      return res
+      url: CONFIG_FILE
     })
   }
 
