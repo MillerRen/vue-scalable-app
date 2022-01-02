@@ -11,6 +11,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
+    disableHostCheck: true,
     setup (app) {
       // mocks数据，我们已经有了一个dev server，为啥不用呢！
       mocks(app)

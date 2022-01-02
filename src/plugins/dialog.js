@@ -1,6 +1,6 @@
 import 'vuejs-dialog/dist/vuejs-dialog.min.css'
 import Dialog from 'vuejs-dialog'
-import mixins from 'vuejs-dialog/vuejs-dialog-mixin.min.js'
+import mixins from 'vuejs-dialog/dist/vuejs-dialog-mixin.min.js'
 
 const registerComponent = Dialog.prototype.registerComponent
 
