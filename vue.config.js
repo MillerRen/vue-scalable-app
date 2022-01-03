@@ -26,7 +26,8 @@ module.exports = {
     config.optimization.delete('splitChunks')
     config.plugins.delete('prefetch')
     config.plugins.delete('preload')
-    config.output.library('myLib')
+    config.plugins.delete('pwa')
+    config.plugins.delete('workbox')
     config.output.libraryTarget('umd')
     config.output.libraryExport('')
     config.module

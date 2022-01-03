@@ -1,6 +1,5 @@
 import 'nprogress/nprogress.css'
 import Vue from 'vue'
-import './registerServiceWorker'
 
 import App from './app'
 import { CONFIG_FILE } from './constants/env'
