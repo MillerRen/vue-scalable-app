@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "node bin/build-component.js build --no-clean ",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -a -d dist"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -38,6 +39,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^3.2.3",
     "lint-staged": "^9.5.0",
     "vue-template-compiler": "^2.6.11"
   },
