@@ -1,0 +1,36 @@
+{
+  "theme": "default",
+  "plugins": [
+    { "name": "dialog", "url": "/plugins/dialog.c6adb74.umd.min.js" }
+  ],
+  "components": [
+    { "name": "HelloWorld", "url": "http://localhost:8081/js/app.js" }
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "name": "App",
+      "url": "/views/App.8a02554.umd.min.js",
+      "children": [
+        { "path": "", "name": "Home", "url": "/views/Home.07ba674.umd.min.js" },
+        {
+          "path": "About",
+          "name": "About",
+          "url": "/views/About.7935f61.umd.min.js",
+          "meta": { "requiredAuth": true }
+        },
+        {
+          "path": "login",
+          "name": "Login",
+          "url": "http://localhost:8081/js/app.js"
+        },
+        {
+          "path": "404",
+          "alias": "*",
+          "name": "Notfound",
+          "url": "/views/404.ae82108.umd.min.js"
+        }
+      ]
+    }
+  ]
+}
