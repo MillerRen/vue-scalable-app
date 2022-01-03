@@ -23,8 +23,10 @@ module.exports = {
     }
   },
   chainWebpack: config => {
+    config.optimization.delete('splitChunks')
     config.plugins.delete('prefetch')
     config.plugins.delete('preload')
+    config.output.library('myLib')
     config.output.libraryTarget('umd')
     config.output.libraryExport('')
     config.module

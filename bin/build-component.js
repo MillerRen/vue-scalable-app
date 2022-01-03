@@ -24,10 +24,12 @@ const args = require('minimist')(rawArgv, {
 })
 const command = args._[0]
 const entry = args._[1]
-if(!entry) {
-  throw new Error('entry not found')
+
+if(entry) {
+  args.target = 'lib'
+  args.formats = 'umd-min'
+  args.name = entry.replace(/(.*\/|.*\\)*(.*\/|.*\\)(.*)\.(vue|js)$/, '$2$3.[hash:7]')
 }
-args.name = entry.replace(/(.*\/|.*\\)*(.*\/|.*\\)(.*)\.(vue|js)$/, '$2$3.[hash:7]')
 
 service.run(command, args, rawArgv).catch(err => {
   console.error(err)
