@@ -18,7 +18,10 @@ module.exports = function (app) {
       // const module = path.join(__dirname, req.path + '.json')
       // const fn = requireUncached(module)
       // fn(req, res, next)
-      const module = path.join(__dirname, req.path + '.json')
+      if(!/\.\w+$/.test(req.path)) {
+        req.path += '.json'
+      }
+      const module = path.join(__dirname, req.path)
       const data = requireUncached(module)
       res.json(data)
     } catch (e) {
